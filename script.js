@@ -7,8 +7,9 @@ const temp = document.querySelector('.temp');
 const desc = document.querySelector('.desc');
 
 const apiKey = 'f39412133af70263bacfa937b826adca'
-const apiUrlDirect = 'http://api.openweathermap.org/geo/1.0/direct?'
-const apiUrlWeather = 'http://api.openweathermap.org/data/2.5/weather?'
+const apiUrlDirect = 'https://api.openweathermap.org/geo/1.0/direct?'
+const apiUrlWeather = 'https://api.openweathermap.org/data/2.5/weather?'
+const iconURL = "https://openweathermap.org/img/wn/";
 
 var lat = 0;
 var lon = 0;
@@ -36,7 +37,6 @@ function getWeather(city)
 
 function fillInfo(data) 
 {
-    const iconURL = "http://openweathermap.org/img/wn/";
     weatherIcon.src = iconURL + data.weather[0].icon + "@2x.png";
     roundTemp = Math.round(data.main.temp);
     temp.innerHTML = roundTemp + "°C";
